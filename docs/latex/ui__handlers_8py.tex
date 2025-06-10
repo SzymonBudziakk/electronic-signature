@@ -1,0 +1,157 @@
+\doxysection{rsa-\/keygenerator/ui\+\_\+handlers.py File Reference}
+\hypertarget{ui__handlers_8py}{}\label{ui__handlers_8py}\index{rsa-\/keygenerator/ui\_handlers.py@{rsa-\/keygenerator/ui\_handlers.py}}
+
+
+Funkcje obsługujące logikę GUI aplikacji podpisu i weryfikacji PDF.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ui__handlers_8py_a3ffac3092c0a809abdde397d59a21b54}{ui\+\_\+handlers.\+check\+\_\+pendrive}} ()
+\begin{DoxyCompactList}\small\item\em Sprawdza, czy pendrive z zaszyfrowanym kluczem prywatnym jest podłączony. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ui__handlers_8py_a0f6a75620157ec5b2f755e16ef505f4e}{ui\+\_\+handlers.\+select\+\_\+pdf}} (parent)
+\begin{DoxyCompactList}\small\item\em Umożliwia użytkownikowi wybór pliku PDF do podpisania. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ui__handlers_8py_ad3dc6b8e9c7760560b0e22b2c5670366}{ui\+\_\+handlers.\+check\+\_\+and\+\_\+show\+\_\+status}} (parent)
+\begin{DoxyCompactList}\small\item\em Pokazuje status pendrive’a (czy wykryty). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ui__handlers_8py_a17c2fea4bd5aca475feabc4968258847}{ui\+\_\+handlers.\+on\+\_\+submit}} ()
+\begin{DoxyCompactList}\small\item\em Obsługuje logikę podpisywania dokumentu po kliknięciu przycisku. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ui__handlers_8py_a1f1c4badaf286cf9be31cc1d22c1114d}{ui\+\_\+handlers.\+select\+\_\+verify\+\_\+pdf}} (parent)
+\begin{DoxyCompactList}\small\item\em Umożliwia użytkownikowi wybór podpisanego pliku PDF do weryfikacji. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ui__handlers_8py_aa7b3e4a1312124932614f4cc95508cfa}{ui\+\_\+handlers.\+select\+\_\+pub\+\_\+key}} (parent)
+\begin{DoxyCompactList}\small\item\em Umożliwia użytkownikowi wybór pliku z kluczem publicznym. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ui__handlers_8py_aad009e49ef5ca34dcb97cfddf5a65b91}{ui\+\_\+handlers.\+verify\+\_\+pdf\+\_\+signature}} ()
+\begin{DoxyCompactList}\small\item\em Przeprowadza proces weryfikacji podpisu na podstawie wybranego PDF i klucza publicznego. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+dict \mbox{\hyperlink{ui__handlers_8py_a23e8045d1f08e0accc20a01be7e53645}{ui\+\_\+handlers.\+app\+\_\+state}}
+\begin{DoxyCompactList}\small\item\em Słownik przechowujący stan aplikacji (ścieżki plików i dane GUI). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Funkcje obsługujące logikę GUI aplikacji podpisu i weryfikacji PDF. 
+
+Zawiera funkcje związane z wyborem plików, podpisywaniem oraz weryfikacją podpisów elektronicznych. 
+
+\label{doc-func-members}
+\Hypertarget{ui__handlers_8py_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{ui__handlers_8py_ad3dc6b8e9c7760560b0e22b2c5670366}\index{ui\_handlers.py@{ui\_handlers.py}!check\_and\_show\_status@{check\_and\_show\_status}}
+\index{check\_and\_show\_status@{check\_and\_show\_status}!ui\_handlers.py@{ui\_handlers.py}}
+\doxysubsubsection{\texorpdfstring{check\_and\_show\_status()}{check\_and\_show\_status()}}
+{\footnotesize\ttfamily \label{ui__handlers_8py_ad3dc6b8e9c7760560b0e22b2c5670366} 
+ui\+\_\+handlers.\+check\+\_\+and\+\_\+show\+\_\+status (\begin{DoxyParamCaption}\item[{}]{parent}{}\end{DoxyParamCaption})}
+
+
+
+Pokazuje status pendrive’a (czy wykryty). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Element GUI, do którego zostanie dodana etykieta statusu. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{ui__handlers_8py_a3ffac3092c0a809abdde397d59a21b54}\index{ui\_handlers.py@{ui\_handlers.py}!check\_pendrive@{check\_pendrive}}
+\index{check\_pendrive@{check\_pendrive}!ui\_handlers.py@{ui\_handlers.py}}
+\doxysubsubsection{\texorpdfstring{check\_pendrive()}{check\_pendrive()}}
+{\footnotesize\ttfamily \label{ui__handlers_8py_a3ffac3092c0a809abdde397d59a21b54} 
+ui\+\_\+handlers.\+check\+\_\+pendrive (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Sprawdza, czy pendrive z zaszyfrowanym kluczem prywatnym jest podłączony. 
+
+\begin{DoxyReturn}{Returns}
+True jeśli plik klucza prywatnego istnieje, False w przeciwnym wypadku. 
+\end{DoxyReturn}
+\Hypertarget{ui__handlers_8py_a17c2fea4bd5aca475feabc4968258847}\index{ui\_handlers.py@{ui\_handlers.py}!on\_submit@{on\_submit}}
+\index{on\_submit@{on\_submit}!ui\_handlers.py@{ui\_handlers.py}}
+\doxysubsubsection{\texorpdfstring{on\_submit()}{on\_submit()}}
+{\footnotesize\ttfamily \label{ui__handlers_8py_a17c2fea4bd5aca475feabc4968258847} 
+ui\+\_\+handlers.\+on\+\_\+submit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obsługuje logikę podpisywania dokumentu po kliknięciu przycisku. 
+
+Używa PIN-\/u z GUI do odszyfrowania klucza i podpisania pliku PDF. \Hypertarget{ui__handlers_8py_a0f6a75620157ec5b2f755e16ef505f4e}\index{ui\_handlers.py@{ui\_handlers.py}!select\_pdf@{select\_pdf}}
+\index{select\_pdf@{select\_pdf}!ui\_handlers.py@{ui\_handlers.py}}
+\doxysubsubsection{\texorpdfstring{select\_pdf()}{select\_pdf()}}
+{\footnotesize\ttfamily \label{ui__handlers_8py_a0f6a75620157ec5b2f755e16ef505f4e} 
+ui\+\_\+handlers.\+select\+\_\+pdf (\begin{DoxyParamCaption}\item[{}]{parent}{}\end{DoxyParamCaption})}
+
+
+
+Umożliwia użytkownikowi wybór pliku PDF do podpisania. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Element GUI (ramka), do którego zostanie dodany label z nazwą pliku. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{ui__handlers_8py_aa7b3e4a1312124932614f4cc95508cfa}\index{ui\_handlers.py@{ui\_handlers.py}!select\_pub\_key@{select\_pub\_key}}
+\index{select\_pub\_key@{select\_pub\_key}!ui\_handlers.py@{ui\_handlers.py}}
+\doxysubsubsection{\texorpdfstring{select\_pub\_key()}{select\_pub\_key()}}
+{\footnotesize\ttfamily \label{ui__handlers_8py_aa7b3e4a1312124932614f4cc95508cfa} 
+ui\+\_\+handlers.\+select\+\_\+pub\+\_\+key (\begin{DoxyParamCaption}\item[{}]{parent}{}\end{DoxyParamCaption})}
+
+
+
+Umożliwia użytkownikowi wybór pliku z kluczem publicznym. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Ramka GUI do której zostanie dodany label z nazwą klucza. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{ui__handlers_8py_a1f1c4badaf286cf9be31cc1d22c1114d}\index{ui\_handlers.py@{ui\_handlers.py}!select\_verify\_pdf@{select\_verify\_pdf}}
+\index{select\_verify\_pdf@{select\_verify\_pdf}!ui\_handlers.py@{ui\_handlers.py}}
+\doxysubsubsection{\texorpdfstring{select\_verify\_pdf()}{select\_verify\_pdf()}}
+{\footnotesize\ttfamily \label{ui__handlers_8py_a1f1c4badaf286cf9be31cc1d22c1114d} 
+ui\+\_\+handlers.\+select\+\_\+verify\+\_\+pdf (\begin{DoxyParamCaption}\item[{}]{parent}{}\end{DoxyParamCaption})}
+
+
+
+Umożliwia użytkownikowi wybór podpisanego pliku PDF do weryfikacji. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Ramka GUI do której zostanie dodany label z nazwą pliku. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{ui__handlers_8py_aad009e49ef5ca34dcb97cfddf5a65b91}\index{ui\_handlers.py@{ui\_handlers.py}!verify\_pdf\_signature@{verify\_pdf\_signature}}
+\index{verify\_pdf\_signature@{verify\_pdf\_signature}!ui\_handlers.py@{ui\_handlers.py}}
+\doxysubsubsection{\texorpdfstring{verify\_pdf\_signature()}{verify\_pdf\_signature()}}
+{\footnotesize\ttfamily \label{ui__handlers_8py_aad009e49ef5ca34dcb97cfddf5a65b91} 
+ui\+\_\+handlers.\+verify\+\_\+pdf\+\_\+signature (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Przeprowadza proces weryfikacji podpisu na podstawie wybranego PDF i klucza publicznego. 
+
+Informuje użytkownika o wyniku (poprawny/niepoprawny podpis). 
+
+\label{doc-var-members}
+\Hypertarget{ui__handlers_8py_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{ui__handlers_8py_a23e8045d1f08e0accc20a01be7e53645}\index{ui\_handlers.py@{ui\_handlers.py}!app\_state@{app\_state}}
+\index{app\_state@{app\_state}!ui\_handlers.py@{ui\_handlers.py}}
+\doxysubsubsection{\texorpdfstring{app\_state}{app\_state}}
+{\footnotesize\ttfamily \label{ui__handlers_8py_a23e8045d1f08e0accc20a01be7e53645} 
+dict ui\+\_\+handlers.\+app\+\_\+state}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{"{}pdf\_path"{}}:\ \textcolor{keywordtype}{None},}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{"{}verify\_pdf\_path"{}}:\ \textcolor{keywordtype}{None},}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{stringliteral}{"{}verify\_pub\_key\_path"{}}:\ \textcolor{keywordtype}{None},}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{stringliteral}{"{}pin\_entry"{}}:\ \textcolor{keywordtype}{None},}
+\DoxyCodeLine{00006\ \}}
+
+\end{DoxyCode}
+
+
+Słownik przechowujący stan aplikacji (ścieżki plików i dane GUI). 
+

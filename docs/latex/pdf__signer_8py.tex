@@ -1,0 +1,65 @@
+\doxysection{rsa-\/keygenerator/pdf\+\_\+signer.py File Reference}
+\hypertarget{pdf__signer_8py}{}\label{pdf__signer_8py}\index{rsa-\/keygenerator/pdf\_signer.py@{rsa-\/keygenerator/pdf\_signer.py}}
+
+
+Moduł odpowiadający za podpisywanie dokumentów PDF z wykorzystaniem klucza RSA.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+rsa.\+RSAPrivate\+Key \mbox{\hyperlink{pdf__signer_8py_a6f0cf9415f4878b1a4f361dc60d88a6d}{pdf\+\_\+signer.\+decrypt\+\_\+private\+\_\+key}} (str pin)
+\begin{DoxyCompactList}\small\item\em Odszyfrowuje klucz prywatny RSA przechowywany na pendrive za pomocą podanego PIN-\/u. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pdf__signer_8py_a0d97a11994ac876665ac771f5f86898b}{pdf\+\_\+signer.\+sign\+\_\+pdf}} (str pdf\+\_\+path, str pin)
+\begin{DoxyCompactList}\small\item\em Podpisuje wskazany plik PDF cyfrowo za pomocą klucza prywatnego RSA użytkownika A. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Moduł odpowiadający za podpisywanie dokumentów PDF z wykorzystaniem klucza RSA. 
+
+Klucz prywatny użytkownika A przechowywany na pendrive jest odszyfrowywany za pomocą PIN-\/u, a dokument PDF podpisywany kryptograficznie. 
+
+\label{doc-func-members}
+\Hypertarget{pdf__signer_8py_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{pdf__signer_8py_a6f0cf9415f4878b1a4f361dc60d88a6d}\index{pdf\_signer.py@{pdf\_signer.py}!decrypt\_private\_key@{decrypt\_private\_key}}
+\index{decrypt\_private\_key@{decrypt\_private\_key}!pdf\_signer.py@{pdf\_signer.py}}
+\doxysubsubsection{\texorpdfstring{decrypt\_private\_key()}{decrypt\_private\_key()}}
+{\footnotesize\ttfamily \label{pdf__signer_8py_a6f0cf9415f4878b1a4f361dc60d88a6d} 
+ rsa.\+RSAPrivate\+Key pdf\+\_\+signer.\+decrypt\+\_\+private\+\_\+key (\begin{DoxyParamCaption}\item[{str}]{pin}{}\end{DoxyParamCaption})}
+
+
+
+Odszyfrowuje klucz prywatny RSA przechowywany na pendrive za pomocą podanego PIN-\/u. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & PIN użytkownika, służący do wygenerowania klucza AES do odszyfrowania klucza RSA. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Obiekt RSAPrivate\+Key gotowy do użycia przy podpisywaniu. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em File\+Not\+Found\+Error} & jeśli plik z kluczem nie został znaleziony. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{pdf__signer_8py_a0d97a11994ac876665ac771f5f86898b}\index{pdf\_signer.py@{pdf\_signer.py}!sign\_pdf@{sign\_pdf}}
+\index{sign\_pdf@{sign\_pdf}!pdf\_signer.py@{pdf\_signer.py}}
+\doxysubsubsection{\texorpdfstring{sign\_pdf()}{sign\_pdf()}}
+{\footnotesize\ttfamily \label{pdf__signer_8py_a0d97a11994ac876665ac771f5f86898b} 
+pdf\+\_\+signer.\+sign\+\_\+pdf (\begin{DoxyParamCaption}\item[{str}]{pdf\+\_\+path}{, }\item[{str}]{pin}{}\end{DoxyParamCaption})}
+
+
+
+Podpisuje wskazany plik PDF cyfrowo za pomocą klucza prywatnego RSA użytkownika A. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdf\+\_\+path} & Ścieżka do pliku PDF, który ma zostać podpisany. \\
+\hline
+{\em pin} & PIN użytkownika używany do odszyfrowania klucza prywatnego.\\
+\hline
+\end{DoxyParams}
+Podpisywanie odbywa się poprzez wyliczenie skrótu SHA-\/256 na bazie zawartości PDF, a następnie podpisanie go za pomocą klucza RSA. Podpis oraz dane o podpisującym zapisywane są w metadanych PDF. 

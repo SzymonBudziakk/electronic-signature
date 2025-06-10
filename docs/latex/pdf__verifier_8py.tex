@@ -1,0 +1,47 @@
+\doxysection{rsa-\/keygenerator/pdf\+\_\+verifier.py File Reference}
+\hypertarget{pdf__verifier_8py}{}\label{pdf__verifier_8py}\index{rsa-\/keygenerator/pdf\_verifier.py@{rsa-\/keygenerator/pdf\_verifier.py}}
+
+
+Moduł do weryfikacji podpisu cyfrowego w dokumencie PDF.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{pdf__verifier_8py_a3f3c1724288609911eba6171ac2b1bb1}{pdf\+\_\+verifier.\+verify\+\_\+signature}} (str pdf\+\_\+path, str public\+\_\+key\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Weryfikuje podpis cyfrowy znajdujący się w metadanych pliku PDF. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Moduł do weryfikacji podpisu cyfrowego w dokumencie PDF. 
+
+Sprawdza, czy podpis znajdujący się w metadanych PDF jest zgodny z jego zawartością oraz z kluczem publicznym użytkownika A. 
+
+\label{doc-func-members}
+\Hypertarget{pdf__verifier_8py_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{pdf__verifier_8py_a3f3c1724288609911eba6171ac2b1bb1}\index{pdf\_verifier.py@{pdf\_verifier.py}!verify\_signature@{verify\_signature}}
+\index{verify\_signature@{verify\_signature}!pdf\_verifier.py@{pdf\_verifier.py}}
+\doxysubsubsection{\texorpdfstring{verify\_signature()}{verify\_signature()}}
+{\footnotesize\ttfamily \label{pdf__verifier_8py_a3f3c1724288609911eba6171ac2b1bb1} 
+ bool pdf\+\_\+verifier.\+verify\+\_\+signature (\begin{DoxyParamCaption}\item[{str}]{pdf\+\_\+path}{, }\item[{str}]{public\+\_\+key\+\_\+path}{}\end{DoxyParamCaption})}
+
+
+
+Weryfikuje podpis cyfrowy znajdujący się w metadanych pliku PDF. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdf\+\_\+path} & Ścieżka do podpisanego pliku PDF. \\
+\hline
+{\em public\+\_\+key\+\_\+path} & Ścieżka do pliku PEM z kluczem publicznym użytkownika A. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True jeśli podpis jest poprawny, False w przeciwnym wypadku. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Value\+Error} & jeśli podpis nie znajduje się w metadanych PDF. \\
+\hline
+\end{DoxyExceptions}

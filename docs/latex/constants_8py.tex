@@ -1,0 +1,48 @@
+\doxysection{rsa-\/keygenerator/constants.py File Reference}
+\hypertarget{constants_8py}{}\label{constants_8py}\index{rsa-\/keygenerator/constants.py@{rsa-\/keygenerator/constants.py}}
+
+
+Stałe konfiguracyjne dla aplikacji podpisu cyfrowego PDF.  
+
+
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{constants_8py_a3cc949044ecc42898c0f666d91735aa2}{constants.\+PENDRIVE\+\_\+\+PATH}} = "{}E\+:\textbackslash{}\textbackslash{}"{}
+\begin{DoxyCompactList}\small\item\em Ścieżka do katalogu z pendrivem zawierającym zaszyfrowany klucz prywatny. \end{DoxyCompactList}\item 
+\Hypertarget{constants_8py_a72b29af0226b575a3b4763a690fc1af9}\label{constants_8py_a72b29af0226b575a3b4763a690fc1af9} 
+{\bfseries constants.\+PRIVATE\+\_\+\+KEY\+\_\+\+PATH} = os.\+path.\+join(\mbox{\hyperlink{constants_8py_a3cc949044ecc42898c0f666d91735aa2}{PENDRIVE\+\_\+\+PATH}}, "{}private\+\_\+encrypted.\+key"{})
+\begin{DoxyCompactList}\small\item\em Pełna ścieżka do zaszyfrowanego pliku z kluczem prywatnym RSA. \end{DoxyCompactList}\item 
+\Hypertarget{constants_8py_ae2a6cfb0163802a7b3b45ed683be5892}\label{constants_8py_ae2a6cfb0163802a7b3b45ed683be5892} 
+int {\bfseries constants.\+RSA\+\_\+\+KEY\+\_\+\+SIZE} = 4096
+\begin{DoxyCompactList}\small\item\em Długość klucza RSA w bitach (zgodnie z wymaganiami projektu PAd\+ES). \end{DoxyCompactList}\item 
+\Hypertarget{constants_8py_abbe52aaf3653ff5265b950e22f833e1c}\label{constants_8py_abbe52aaf3653ff5265b950e22f833e1c} 
+int {\bfseries constants.\+AES\+\_\+\+KEY\+\_\+\+SIZE} = 32
+\begin{DoxyCompactList}\small\item\em Długość klucza AES w bajtach (256-\/bit = 32 bajty). \end{DoxyCompactList}\item 
+\Hypertarget{constants_8py_ac384e6ea56cdbfe55ba23711611bd083}\label{constants_8py_ac384e6ea56cdbfe55ba23711611bd083} 
+int {\bfseries constants.\+IV\+\_\+\+SIZE} = 16
+\begin{DoxyCompactList}\small\item\em Rozmiar wektora inicjalizującego (IV) używanego w trybie AES CBC (w bajtach). \end{DoxyCompactList}\item 
+\Hypertarget{constants_8py_a622ac47e5de506428993931c5080812e}\label{constants_8py_a622ac47e5de506428993931c5080812e} 
+int {\bfseries constants.\+SALT\+\_\+\+SIZE} = 16
+\begin{DoxyCompactList}\small\item\em Rozmiar soli używanej w funkcji PBKDF2 do generowania klucza AES (w bajtach). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Stałe konfiguracyjne dla aplikacji podpisu cyfrowego PDF. 
+
+
+
+\label{doc-var-members}
+\Hypertarget{constants_8py_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{constants_8py_a3cc949044ecc42898c0f666d91735aa2}\index{constants.py@{constants.py}!PENDRIVE\_PATH@{PENDRIVE\_PATH}}
+\index{PENDRIVE\_PATH@{PENDRIVE\_PATH}!constants.py@{constants.py}}
+\doxysubsubsection{\texorpdfstring{PENDRIVE\_PATH}{PENDRIVE\_PATH}}
+{\footnotesize\ttfamily \label{constants_8py_a3cc949044ecc42898c0f666d91735aa2} 
+str constants.\+PENDRIVE\+\_\+\+PATH = "{}E\+:\textbackslash{}\textbackslash{}"{}}
+
+
+
+Ścieżka do katalogu z pendrivem zawierającym zaszyfrowany klucz prywatny. 
+
+Zakłada się, że pendrive jest zamontowany w dysku E ale moze sie to roznic. 
