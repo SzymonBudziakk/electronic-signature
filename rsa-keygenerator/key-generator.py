@@ -1,3 +1,7 @@
+## @file key_generator.py
+#  @brief Moduł GUI do generowania pary kluczy RSA oraz szyfrowania klucza prywatnego za pomocą AES.
+#  Wygenerowany klucz prywatny jest zapisywany na pendrive w postaci zaszyfrowanej, a klucz publiczny jako PEM.
+
 import tkinter as tk
 from tkinter import messagebox
 from cryptography.hazmat.primitives.asymmetric import rsa
@@ -6,15 +10,12 @@ from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.backends import default_backend
 import os
+from constants import PENDRIVE_PATH, RSA_KEY_SIZE, AES_KEY_SIZE, IV_SIZE
 
-# Ścieżka do pendrive'a (dla macOS)
-PENDRIVE_PATH = "D:\\"
-
-# Parametry szyfrowania
-RSA_KEY_SIZE = 4096
-AES_KEY_SIZE = 32  # 256-bit
-IV_SIZE = 16       # For AES CBC
-
+## @brief Funkcja generująca parę kluczy RSA i zapisująca je w odpowiednich lokalizacjach.
+#  @param pin PIN podany przez użytkownika, wykorzystywany jako hasło do szyfrowania klucza prywatnego.
+#  @throws ValueError jeśli PIN jest pusty.
+#  @throws FileNotFoundError jeśli pendrive nie został wykryty.
 def generate_keys(pin: str):
     if not pin:
         raise ValueError("PIN nie może być pusty.")
@@ -60,17 +61,18 @@ def generate_keys(pin: str):
         encryption_algorithm=serialization.NoEncryption()
     )
 
-    # Padding
+    # Dodanie paddingu do danych binarnych (zgodnie z blokiem AES)
     pad_len = 16 - (len(private_bytes) % 16)
     padded_data = private_bytes + bytes([pad_len] * pad_len)
     encrypted_private = encryptor.update(padded_data) + encryptor.finalize()
 
-    # Zapis zaszyfrowanego klucza prywatnego
+    # Zapis zaszyfrowanego klucza prywatnego na pendrive
     private_key_path = os.path.join(PENDRIVE_PATH, "private_encrypted.key")
     with open(private_key_path, "wb") as f:
         f.write(salt + iv + encrypted_private)
 
-
+## @brief Funkcja uruchamiająca graficzny interfejs do generowania kluczy.
+#  Umożliwia użytkownikowi wpisanie PIN-u oraz wygenerowanie pary kluczy RSA.
 def run_gui():
     def on_generate():
         pin = pin_entry.get()
@@ -90,7 +92,7 @@ def run_gui():
 
     pin_entry = tk.Entry(
         frame,
-        show="", # Changed from "*" to "" to make the input visible
+        show="",  # Wpis widoczny (do testów; opcjonalnie można ustawić na "*")
         font=("Arial", 14),
         width=30,
         highlightbackground="gray",
@@ -115,5 +117,6 @@ def run_gui():
     root.resizable(False, False)
     root.mainloop()
 
+## @brief Punkt wejścia do programu - uruchomienie GUI do generowania kluczy.
 if __name__ == "__main__":
     run_gui()
